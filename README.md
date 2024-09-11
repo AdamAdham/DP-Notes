@@ -123,4 +123,6 @@ for coin := range coins {
 ### Personal Explanation
 **1st example**  For each number we get all combinations of coins, but **2nd example** we get in the first outer loop, the inner loop `for i in n` the total number of ways for `coins = [1]` so second inner loop we get the total number of ways for `coins = [1,2]` and so for example if `i=3` we only get `+=f(3-2) + f(3-2-1)` and not add `+=f(3-1) + f(3-1-2)` since at the point of decreasing the ones the coin 2 was not in the equation
 
+**Another way of explanation:** `n=3` The first loop of coin=1 it will say `ways=[1,1,1,1]` for {1,1,1} and then coin=2 then get `ways[3] += ways=[3-2=1]` and `ways[2] += ways=[2-2=1]` so `ways=[1,1,2,2]` 
+
 This is why the loop order changes the result. When you iterate over the coins first, you're ensuring that each combination is only counted once, because you build up solutions using one coin at a time.
